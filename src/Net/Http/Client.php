@@ -61,13 +61,13 @@ class Response {
 class Client extends AbstractClient {
     public function get($url) {
         $req = new Request($url, Constants::GET);
-        return $this->do($req);
+        return $this->doRequest($req);
     }
 
     public function post($url, $body = null) {
         $req = new Request($url, Constants::POST);
         $req->setBody($body);
-        return $this->do($req);
+        return $this->doRequest($req);
     }
 }
 
@@ -83,7 +83,7 @@ abstract class AbstractClient {
         return $rs;
     }
 
-    protected function do(Request $request) {
+    protected function doRequest(Request $request) {
         $resource = curl_init();
         curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($resource, CURLOPT_SSL_VERIFYPEER, true);

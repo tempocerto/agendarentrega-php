@@ -52,7 +52,7 @@ class Transport extends AbstractClient {
         foreach ($this->headers as $key => $value) {
             $request->setHeader($key, $value);
         }
-        $resp = $this->do($request);
+        $resp = $this->doRequest($request);
         if (!$this->validResponse($resp)) {
             $body = $resp->asJson();
             throw new \Exception($body['message'], $resp->getStatusCode());
