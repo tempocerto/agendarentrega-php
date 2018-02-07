@@ -22,9 +22,9 @@ class NotaFiscal implements NotaFiscalInterface {
     }
 
     public function recusarNFE($chave, $motivo) {
-        $res = $this->client->post("/nota-fiscal/notas/$chave/recusar-recebimento", [
+        $res = $this->client->post("/nota-fiscal/notas/$chave/recusar-recebimento", array(
             "motivo" => $motivo,
-        ]);
+        ));
         return $this->client->validResponse($res);
     }
 }

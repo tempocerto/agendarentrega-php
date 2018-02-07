@@ -20,11 +20,11 @@ class ClientTest extends TestCase {
     }
 
     public function testPostShouldSendWithSuccess() {
-        $res = $this->client->post('https://jsonplaceholder.typicode.com/posts', [
+        $res = $this->client->post('https://jsonplaceholder.typicode.com/posts', array(
             'userId' => 1,
             'title' => 'foo',
             'body' => 'bar',
-        ]);
+        ));
         $this->assertEquals(201, $res->getStatusCode());
         $body = $res->asJson();
         $this->assertEquals(101, $body['id']);

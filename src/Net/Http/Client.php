@@ -6,7 +6,7 @@ class Request {
     public $url;
     public $method;
     public $body;
-    public $headers = [];
+    public $headers = array();
 
     public function __construct($url, $method) {
         $this->url = $url;
@@ -76,7 +76,7 @@ abstract class AbstractClient {
     public abstract function post($url, $body = null);
 
     private function buildHeaders($headers) {
-        $rs = [];
+        $rs = array();
         foreach ($headers as $k => $v) {
             $rs[] = $k . ': ' . $v;
         }
@@ -106,6 +106,6 @@ abstract class AbstractClient {
         if ($data === false) {
             throw new \Exception($error, $errno);
         }
-        return new Response(array_merge(['body' => $data], $info));
+        return new Response(array_merge(array('body' => $data), $info));
     }
 }

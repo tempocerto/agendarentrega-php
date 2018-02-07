@@ -14,9 +14,9 @@ class Client {
     private $transport;
 
     public function __construct($accessKey, $secretKey, $baseUri = self::BASE_URI) {
-        $this->transport = new Transport($baseUri, [
+        $this->transport = new Transport($baseUri, array(
             'Authorization' => "Bearer $accessKey:$secretKey",
-        ]);
+        ));
     }
 
     public function getNotaFiscal() {
@@ -41,7 +41,7 @@ class Transport extends AbstractClient {
     public function post($url, $body = null) {
         $request = new Request($this->baseUri . $url, Constants::POST);
         if (!$body) {
-            $body = [];
+            $body = array();
         }
         $request->setBody(json_encode($body, JSON_FORCE_OBJECT))
             ->setHeader('Content-Type', 'application/json;charset=UTF-8');
