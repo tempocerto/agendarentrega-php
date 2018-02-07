@@ -1,0 +1,14 @@
+pipeline:
+  test:
+    image: php:${PHP_VERSION}
+    commands:
+      - apk add --no-cache curl
+      - curl -O https://getcomposer.org/composer.phar
+      - php composer.phar install
+      - php composer.phar test
+
+matrix:
+  PHP_VERSION:
+  - "5.6-alpine"
+  - "7.0-alpine"
+  - "7.2-alpine"
