@@ -1,0 +1,23 @@
+{
+    "name": "tempocerto/agendarentrega-php",
+    "description": "Client para comunicação com a API do AgendarEntrega.com",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oliver Kraemer",
+            "email": "oliverkra@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AgendarEntrega\\": [
+                "src"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
