@@ -2,6 +2,7 @@ pipeline:
   test:
     image: webdevops/php:${PHP_VERSION}
     commands:
+      - php -v
       - sleep 3
       - composer install
       - composer test
