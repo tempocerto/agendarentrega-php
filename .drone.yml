@@ -2,6 +2,7 @@ pipeline:
   test:
     image: webdevops/php:${PHP_VERSION}
     commands:
+      - sleep 3
       - composer install
       - composer test
 
@@ -10,3 +11,8 @@ matrix:
   - "ubuntu-12.04" # 5.3
   - "ubuntu-15.04" # 5.6
   - "ubuntu-16.04" # 7.0
+
+services:
+  fakeserver:
+    image: vimagick/json-server
+    command: ["https://raw.githubusercontent.com/vimagick/dockerfiles/master/json-server/db.json"]

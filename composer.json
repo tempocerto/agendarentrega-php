@@ -26,7 +26,7 @@
         }
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit --testdox --bootstrap vendor/autoload.php tests"
+        "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests"
     },
     "config": {
         "optimize-autoloader": true
