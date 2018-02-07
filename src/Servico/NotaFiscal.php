@@ -4,11 +4,6 @@ namespace AgendarEntrega\Servico;
 
 use \AgendarEntrega\Transport;
 
-interface NotaFiscalInterface {
-    public function aprovarNFE($chave);
-    public function recusarNFE($chave, $motivo);
-}
-
 class NotaFiscal implements NotaFiscalInterface {
     private $client;
 
